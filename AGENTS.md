@@ -1,6 +1,7 @@
 # AGENTS instructions for code-workspace-ubuntu-installer
 
 This repository contains a bootstrap shell script and a Python package that installs development tools on Ubuntu.
+The script installs Python using the standard Ubuntu packages so it can then bootstrap the rest of the tooling with `pipx`.
 
 ## Guidelines
 

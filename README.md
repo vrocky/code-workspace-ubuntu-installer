@@ -10,7 +10,7 @@ Run the following command on a new Ubuntu system:
 curl -sSL https://raw.githubusercontent.com/vrocky/code-workspace-ubuntu-installer/main/install.sh | bash
 ```
 
-The bootstrap script installs Python through `pyenv`, installs `pipx`, installs this package from GitHub, and then launches the installer CLI.
+The bootstrap script installs Python from Ubuntu packages, installs `pipx`, installs this package from GitHub, and then launches the installer CLI.
 
 ## CLI Usage
 
@@ -29,7 +29,7 @@ The installer tracks progress in `~/.installer-state/install_status.json` so you
 
 | Tool | Installer | Purpose |
 |------|-----------|---------|
-| Python | pyenv | Base language + orchestration |
+| Python | apt | Base language + orchestration |
 | pipx | `pip install --user pipx` | For isolated Python CLI apps |
 | Node.js | nvm | Frontend, tooling, CLI utilities |
 | Go | gvm | Backend, concurrency-based systems |

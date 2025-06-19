@@ -3,24 +3,13 @@ set -e
 
 # Install system prerequisites
 sudo apt-get update
-sudo apt-get install -y git curl build-essential
-
-# Install pyenv if missing
-if [ ! -d "$HOME/.pyenv" ]; then
-  curl https://pyenv.run | bash
-fi
-
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-PYTHON_VERSION=3.11.9
-pyenv install -s "$PYTHON_VERSION"
-pyenv global "$PYTHON_VERSION"
+sudo apt-get install -y git curl python3 python3-pip python3-venv build-essential
 
 # Install pipx and ensure PATH
-pip install --user pipx
-python3 -m pipx ensurepath
+if ! command -v pipx >/dev/null 2>&1; then
+  python3 -m pip install --user pipx
+  python3 -m pipx ensurepath
+fi
 export PATH="$HOME/.local/bin:$PATH"
 
 # Install the installer via pipx from GitHub
